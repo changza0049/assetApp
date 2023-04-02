@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-toolbar color="warning">
+        <ion-title>
+            หน้าแรก
+        </ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="GoToProfile()">
+                <ion-icon slot="icon-only" name="person"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div class="content">
+        <div class="menu">
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <a (click)="GoToWithdrawAdd()" class="menu-item">
+                            <ion-icon class="icon" name="cart-outline"></ion-icon>
+                            <div class="menu-name">เบิกสินค้า</div>
+                        </a>
+                    </ion-col>
+                    <ion-col>
+                        <a (click)="GoToWithdraw()" class="menu-item">
+                            <ion-icon class="icon" name="time-outline"></ion-icon>
+                            <div class="menu-name">ประวัติการเบิก</div>
+                        </a>
+                    </ion-col>
+                    <ion-col>
+                        <!-- <a (click)="GoTocancel()" class="menu-item">
+                            <ion-icon class="icon" name="close-circle-outline"></ion-icon>
+                            <div class="menu-name">ยกเลิกการเบิก</div>
+                        </a> -->
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <div class="kai">
+                <img src="assets/kai.jpg">
+            </div>
+        </div>
+    </div>
+</ion-content>

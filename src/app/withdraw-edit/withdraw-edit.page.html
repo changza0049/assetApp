@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-toolbar color="warning">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>แก้ไขสินค้า</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item>
+            <ion-label>วันที่เบิกสินค้า</ion-label>
+            <ion-input type="date" [(ngModel)]="widthdraw_date"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>เวลาเบิกสินค้า</ion-label>
+            <ion-input type="time" [(ngModel)]="widthdraw_time"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>รายการสินค้า</ion-label>
+            <ion-select placeholder="เลือกสินค้า" [(ngModel)]="product_id">
+                <ion-select-option *ngFor="let item of data" value="{{ item.product_id }}">
+                    {{ item.product_name }}
+                </ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>จำนวน</ion-label>
+            <ion-input [(ngModel)]="amount"></ion-input>
+        </ion-item>
+    </ion-list>
+    <div class="button2">
+        <ion-button size="large" (click)="Edit()" color="secondary">ยืนยันการแก้ไข</ion-button>
+    </div>
+</ion-content>

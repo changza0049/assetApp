@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-toolbar color="warning">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>ประวัติการเบิก</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div>
+        <div class="no-cart" *ngIf="items.length==0">
+            ไม่มีประวัติการเบิก
+        </div>
+        <ion-item *ngFor="let item of items">
+            <ion-label>
+                <div>{{item.widthdraw_date}}</div>
+                <div>{{item.product_name}}</div>
+                <div>{{item.amount}}</div>
+            </ion-label>
+            <ion-button slot="end" size="large" fill="clear" (click)="edit(item)">
+                <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+            </ion-button>
+            <ion-button slot="end" size="large" fill="clear" color="danger" (click)="edit(item)">
+                <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+            </ion-button>
+        </ion-item>
+    </div>
+</ion-content>
